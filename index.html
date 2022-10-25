@@ -4,9 +4,92 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style.css">
     <title>Weather-App</title>
 </head>
 <body>
-    
+
+    <div class="container">
+        <div class="current-info">
+            <div class="date-container">
+                <div class="time" id="time">
+                    12:30 <span id="am-pm">PM</span>
+                </div>
+                <div class="date" id="date">
+                    Monday, 24 October
+                </div>
+                <div class="others" id="current-weather-items">
+                    <div class="weather-item">
+                        <p>Humidity</p>
+                        <p>95.2%</p>
+                    </div>
+                    <div class="weather-item">
+                        <p>Wind</p>
+                        <p>121</p>
+                    </div>
+                    <div class="weather-item">
+                        <p>Temp</p>
+                        <p>287</p>
+                    </div>
+                   
+                </div>
+            </div>
+            <div class="place-container">
+                <div class="time-zone" id="time-zone">Unites State</div>
+                <div id="country" class="country">TX</div>
+            </div>
+        </div>
+
+    </div>
+    <div class="future-forecast">
+        <div class="today" id="current-temp">
+            <img src=" http://openweathermap.org/img/wn/10d@2x.png" alt="Weather Icon" class="w-icon">
+            <div class="other">
+                <div class="day">Monday</div>
+                <div class="temp">Night - 67&#176; F</div>
+                <div class="temp">Day - 89&#176; F</div>
+            </div>
+        </div>
+
+        <div class="weather-forecast" id="weather-forecast">
+            <div class="weather-forcast-item"></div>
+            <div class="day">Tue</div>
+            <img src=" http://openweathermap.org/img/wn/10d@2x.png" alt="Weather Icon" class="w-icon">
+            <div class="temp">Night - 67&#176; F</div>
+            <div class="temp">Day - 89&#176; F</div>
+        
+        <div class="weather-forecast" id="weather-forecast">
+            <div class="weather-forcast-item"></div>
+            <div class="day">Wed</div>
+            <img src=" http://openweathermap.org/img/wn/10d@2x.png" alt="Weather Icon" class="w-icon">
+            <div class="temp">Night - 67&#176; F</div>
+            <div class="temp">Day - 89&#176; F</div>
+        </div>
+        <div class="weather-forecast" id="weather-forecast">
+            <div class="weather-forcast-item"></div>
+            <div class="day">Thur</div>
+            <img src=" http://openweathermap.org/img/wn/10d@2x.png" alt="Weather Icon" class="w-icon">
+            <div class="temp">Night - 67&#176; F</div>
+            <div class="temp">Day - 89&#176; F</div>
+        </div>
+        <div class="weather-forecast" id="weather-forecast">
+            <div class="weather-forcast-item"></div>
+            <div class="day">Fri</div>
+            <img src=" http://openweathermap.org/img/wn/10d@2x.png" alt="Weather Icon" class="w-icon">
+            <div class="temp">Night - 67&#176; F</div>
+            <div class="temp">Day - 89&#176; F</div>
+        </div>
+        <div class="weather-forecast" id="weather-forecast">
+            <div class="weather-forcast-item"></div>
+            <div class="day">Sat</div>
+            <img src=" http://openweathermap.org/img/wn/10d@2x.png" alt="Weather Icon" class="w-icon">
+            <div class="temp">Night - 67&#176; F</div>
+            <div class="temp">Day - 89&#176; F</div>
+        </div>
+    </div>
+
+    </div>
+
+    <script src="./script.js"></script>
 </body>
 </html>
