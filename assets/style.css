@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
-
 * {
     box-sizing: border-box;
     margin:0;
@@ -42,16 +40,16 @@ body {
     font-size: 30px;
 }
 
-.place-container{
+.location{
     text-align: end;
 }
 
-.place-container .time-zone{
+.location .time-zone{
     font-size: 30px;
     font-weight: 100;
 }
 
-.place-container .country{
+.location .country{
     font-size: 12px;
     font-weight: 700;
 }
