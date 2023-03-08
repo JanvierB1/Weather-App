@@ -1,76 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/style.css">
-    <title>Weather-Application</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="Description" content="Get weather data from any city" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./assets/style.css">
+  <title>Weather Dashboard</title>
 </head>
+
 <body>
 
-    <div class="container">
-        <div class="current-info">
+  <nav class="navbar navbar-expand-lg custom-navbar">
+    <h1>Weather Dashboard</h1>
+  </nav>
 
-            <div class="date-container">
-                <div class="time" id="time">
-                    3:40<span id="am-pm">PM-AM</span>
+<div class="container-fluid">
+
+  <div class="row main">
+
+      <div class="col-md-3">
+
+        <div class="container">
+
+                <div class="row" id="city-search">
+                  <div class="col">
+                    <h3>Search Location:</h3>
+                  </div>
                 </div>
-                <div class="date" id="date">
-                    Wednesday, 19 Oct
+
+                <div class="row">
+                  <div class="col">
+                    <form id="city-form">
+                        <input name="city" id="city-input" type="text">
+                        <button type="submit" class="btn btn-warning" id="search-btn">Search</button>
+                      </form>
+                    </div>
                 </div>
-                <div class="others" id="current-weather-items">                   
+
+                <div class="row">
+                  <div class="col" id="search-history"></div>
                 </div>
+        </div>
+
+      </div>
+
+      <div class="col-md-9">
+        <div class="container">
+
+          <div class="row" id="current-data">
+
+            <div class="col">
+              <div id="city-date">
+                <h3 id="current-city"></h3>
+                <h4 id="current-date"></h4>
+              </div>
             </div>
 
-            <div class="location">
-                <div class="time-zone" id="time-zone">Texas</div>
-                <div id="country" class="country">US</div>
+            <div class="col">
+              <div id="temp-wind-hum">
+                <p id="current-temp"></p>
+                <p id="current-wind"></p>
+                <p id="current-humidity"></p>
+              </div>
             </div>
-        </div>      
-    </div>
-    <div class="future-forecast">
-        <div class="today" id="current-temp">
-            <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-            <div class="other">
-                <div class="day">Monday</div>
-                <div class="temp">Night - 93&#176; F</div>
-                <div class="temp">Day - 154&#176; F</div>
+
+            <div class="col">
+              <span id="current-icon"></span>
             </div>
-        </div>
-        <div class="weather-forecast" id="weather-forecast">
-            <div class="weather-forecast-item">
-                <div class="day">Tue</div>
-                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-                <div class="temp">Night - 89&#176; F</div>
-                <div class="temp">Day - 176&#176; F</div>
+
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <h3 id="five-day-label"></h3></div>
             </div>
-            <div class="weather-forecast-item">
-                <div class="day">Wed</div>
-                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-                <div class="temp">Night - 89&#176; F</div>
-                <div class="temp">Day - 176&#176; F</div>
-            </div>
-            <div class="weather-forecast-item">
-                <div class="day">Thur</div>
-                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-                <div class="temp">Night - 89&#176; F</div>
-                <div class="temp">Day - 176&#176; F</div>
-            </div>
-            <div class="weather-forecast-item">
-                <div class="day">Fri</div>
-                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-                <div class="temp">Night - 89&#176; F</div>
-                <div class="temp">Day - 176&#176; F</div>
-            </div>
-            <div class="weather-forecast-item">
-                <div class="day">Sat</div>
-                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-                <div class="temp">Night - 89&#176; F</div>
-                <div class="temp">Day - 176&#176; F</div>
-            </div>
-        </div>
-    </div>  
-    <script src="script.js"></script>
+
+          <div class="row" id="five-day-forecast"></div>
+
+      </div>
+
+  </div>
+
+</div>
 </body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+<script src="./script.js"></script>
+
 </html>
