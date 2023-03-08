@@ -1,16 +1,36 @@
 # Weather-App
-
+![Github License](https://img.shields.io/badge/license-MIT-green)
 ## Description
-
-I wanted to create an app where i was bale to see the time and weather of a specific location, especially where I lived, I was tired of looking at these other weather apps so I decided to make my owm at my liking, an app where I would like to see the information at.Ny building this app the users can come in here and look at the weather for the week of specific places, to make sure they dont get rained on!
-
+This is an app where the user can search the next 5 day weather forecast for any city.
+___
+## Table of Contents
+* [Installation](#installation)
+* [Usage](#usage)
+* [License](#license)
+* [Contributing](#contributing)
+* [Tests](#tests)
+* [Questions](#questions)
+___
 ## Installation
-
-Their is no installations really, just follow the link and allow the app to have acces to your location!
-
+To install the needed dependencies, run the following commands:
+```
+N/A 
+```
+___
 ## Usage
-
-To use this app there isnt really much to do, the user just has to follow the link and the information is pretty much layout out for the world to see!
-
-
-
+To use this project there isnt much to do just follow the link and you will be taken to the app.
+___
+## License
+This project is licensed under the MIT license.
+___
+## Contributing
+Just email me!
+___
+## Tests
+To test the project, run the following commands:
+```
+N/A
+```
+___
+## Questions
+If you have any questions feel free tp contact me directly at janvieracevedo912@gmail.com. You can find my github profile at [github.com/JanvierB1](https://github.com/JanvierB1/)
