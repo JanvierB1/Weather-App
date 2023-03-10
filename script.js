@@ -1,12 +1,11 @@
-var submitButtonEl = $('#search-btn');
+var searchbutton = $('#search-btn');
 
-function handleSearch(event) {
+function startSearch(event) {
     event.preventDefault();
-    query = $('#city-input').val();
+    query = $('#search-city').val();
     getCoordinates(query);
 }
 
-// create function to get coordinates based on city input. pass latitude and longitude into getFiveDayForecast and getCurrentWeather functions
 var getCoordinates = function (query) {
 
     var apiUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${query}&appid=36e86471fab96e1301343f011372f254`;
@@ -30,18 +29,18 @@ var getCurrentWeather = function (lat, lon) {
         })
         .then(function (data) {
             console.log(data);
-            var currentCity = $('#current-city');
-            var currentDate = $('#current-date');
-            var currentIcon = $('#current-icon');
-            var currentTemp = $('#current-temp');
-            var currentWind = $('#current-wind');
-            var currentHumidity = $('#current-humidity');
-            currentCity.text(data.name);
-            currentDate.text(moment().format('MM/DD/YYYY'));
-            currentIcon.html(`<img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png">`);
-            currentTemp.text('Temp: ' + data.main.temp + '°F');
-            currentWind.text('Wind: ' + data.wind.speed + ' MPH');
-            currentHumidity.text('Humidity: ' + data.main.humidity + '%');
+            var presentCity = $('#display-city');
+            var presentDate = $('#display-date');
+            var presentIcon = $('#display-icon');
+            var presentTemp = $('#display-temp');
+            var presentWind = $('#display-wind');
+            var presentHumidity = $('#display-humidity');
+            presentCity.text(data.name);
+            presentDate.text(moment().format('MM/DD/YYYY'));
+            presentIcon.html(`<img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png">`);
+            presentTemp.text('Temp: ' + data.main.temp + '°F');
+            presentWind.text('Wind: ' + data.wind.speed + ' MPH');
+            presentHumidity.text('Humidity: ' + data.main.humidity + '%');
         })
 }
 
@@ -53,30 +52,30 @@ var getFiveDayForecast = function (lat, lon) {
         })
         .then(function (data) {
             console.log(data);
-            var fiveDayLabel = $('#five-day-label');
-            fiveDayLabel.text('5-Day Forecast:');
-            var fiveDayForecast = $('#five-day-forecast');
-            fiveDayForecast.empty();
-            $('#city-form')[0].reset();
+        var dailyLabel = $('#Daily');
+            dailyLabel.text('5-Day Forecast:');
+        var Forecast = $('#daily-forecast');
+            Forecast.empty();
+            $('#form')[0].reset();
             for (var i = 0; i < data.list.length; i += 8) {
                 var html = ` 
-            <div class="card" style="width: 11rem; background-color: rgb(0, 157, 255); margin-bottom: 1em;">
-            <div class="card-body">
-            <h5 class="card-title" style="color:white;">${moment.unix(data.list[i].dt).format('MM/DD/YYYY')}</h5>
+            <div class="card" style="width: 11rem; background-color:White; margin-bottom: 1em;">
+            <div class="Box-body">
+            <h5 class="Box-title" style="color:black;">${moment.unix(data.list[i].dt).format('MM/DD/YYYY')}</h5>
             <img src="http://openweathermap.org/img/wn/${data.list[i].weather[0].icon}.png">
-            <p class="card-text" style="color:white;">Temp: ${data.list[i].main.temp}°F</p>
-            <p class="card-text" style="color:white;">Wind: ${data.list[i].wind.speed} MPH</p>
-            <p class="card-text" style="color:white;">Humidity: ${data.list[i].main.humidity}%</p>
+            <p class="box-Text" style="color:black;">Temp: ${data.list[i].main.temp}°F</p>
+            <p class="box-Text" style="color:black;">Wind: ${data.list[i].wind.speed} MPH</p>
+            <p class="box-Text" style="color:black;">Humidity: ${data.list[i].main.humidity}%</p>
             </div>
             </div>
             `
-                fiveDayForecast.append(html);
+                Forecast.append(html);
             }
 
         })
 }
 
-var storeCity = function (lat, lon) {
+var saveCity = function (lat, lon) {
     var apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=imperial&appid=36e86471fab96e1301343f011372f254`;
     fetch(apiUrl)
         .then(function (response) {
@@ -85,48 +84,45 @@ var storeCity = function (lat, lon) {
         .then(function (data) {
             console.log(data);
 
-            var city = data.name;
-            var getStoredCities = getCities();
-            if (getStoredCities === null) {
-                var citiesArr = [];
-            } else {
-                var citiesArr = getStoredCities;
+            var cities = data.name;
+            var storedCities = getCities();
+                if (storedCities === null) {
+            var cityarray = [];
+                } else {
+            var cityarray = storedCities;
             }
-            // if the array does not include city, add it to the array
-            console.log(!citiesArr.includes(city));
-            if (!citiesArr.includes(city)) {
-                citiesArr.push(city);
+            
+            console.log(!cityarray.includes(cities));
+                if (!cityarray.includes(cities)) {
+                cityarray.push(cities);
             }
-            localStorage.setItem('city', JSON.stringify(citiesArr));
+            localStorage.setItem('cities', JSON.stringify(cityarray));
             init();
         })
 }
 
 function getCities() {
-    return JSON.parse(localStorage.getItem('city'));
+    return JSON.parse(localStorage.getItem('cities'));
 }
 
-// create global createButton function, argument will be city
 function init() {
     $('#search-history').html('');
-    var citiesArr = getCities();
-    console.log(citiesArr);
-    if (citiesArr) {
+    var cityarray = getCities();
+    console.log(cityarray);
+    if (cityarray) {
         console.log("success");
-        for (var i = 0; i < citiesArr.length; i++) {
+        for (var i = 0; i < cityarray.length; i++) {
             var storedCityEl = $('<button class="btn btn-primary">');
-            var storedCity = storedCityEl.text(citiesArr[i]);
+            var storedCity = storedCityEl.text(cityarray[i]);
             $('#search-history').append(storedCity);
         }
     }
 }
-
 init();
 
-submitButtonEl.on('click', handleSearch);
+searchbutton.on('click', startSearch);
 $('#search-history').on('click', reSearch);
 
 function reSearch(event) {
     getCoordinates(event.target.innerText)
-
 }

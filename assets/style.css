@@ -1,24 +1,79 @@
 body {
-  background-color: rgb(238, 200, 75);
+  background-color: rgb(180, 145, 29);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .custom-navbar {
-    background-color: rgb(20, 159, 245);
+    background-color: rgb(30, 35, 37);
     margin-bottom: 20px;
   }
   
   h1 {
     color: white;
   }
+
+  h3 {
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   
   #temp-wind-hum, #city-date, #current-icon, #search-history {
     display: block;
   }
   
-  #current-data, #five-day-forecast {
+  #daily-forecast {
+    background-color: rgb(36, 33, 33);
+    box-shadow: 0px 0px 10px black;
+    border-radius: 10px;
+    padding: 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
   }
   
   button {
     margin: 10px;
   }
+  
+  #search-btn {
+    color: rgb(241, 238, 238);
+    background-color: rgb(44, 38, 38);
+  }
+
+  .search-box {
+    background-color: rgb(41, 37, 37);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .col-md-3 {
+    margin: auto;
+    border-radius: 10px;
+  }
+
+  .content-table{
+    border-radius: 10px;
+    margin-bottom: 30px;
+    padding: 20px;
+    text-align: center;
+    margin: auto;
+    margin-top: 40px;
+  }
+
+  #form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  
+
+
+

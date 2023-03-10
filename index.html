@@ -5,80 +5,89 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="Description" content="Get weather data from any city" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="./assets/style.css">
   <title>Weather Dashboard</title>
 </head>
 
+
+<style>
+  body {
+    background-image: url('./assets/images/seamless-weather-forecast-background-vector-2000781.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+</style>
+
+
 <body>
 
   <nav class="navbar navbar-expand-lg custom-navbar">
-    <h1>Weather Dashboard</h1>
+    <h1>Weather Tracker</h1>
   </nav>
 
-<div class="container-fluid">
+<div class="main-Box">
 
   <div class="row main">
 
       <div class="col-md-3">
-
+        
         <div class="container">
-
+            <div class="search-box">
                 <div class="row" id="city-search">
                   <div class="col">
-                    <h3>Search Location:</h3>
+                    <h3>Enter City Name:</h3>
                   </div>
                 </div>
 
                 <div class="row">
                   <div class="col">
-                    <form id="city-form">
-                        <input name="city" id="city-input" type="text">
-                        <button type="submit" class="btn btn-warning" id="search-btn">Search</button>
+                    <form id="form">
+                        <input name="city" id="search-city" type="text">
+                        <button type="submit" class="btn btn-info" id="search-btn">Search Now</button>
                       </form>
                     </div>
                 </div>
-
+          </div>
                 <div class="row">
-                  <div class="col" id="search-history"></div>
+                  <div class="col" id="history"></div>
                 </div>
         </div>
-
+      </div>
       </div>
 
-      <div class="col-md-9">
+      <div class="content-table col-md-9">
         <div class="container">
 
-          <div class="row" id="current-data">
+          <div class="row" id="display-data">
 
             <div class="col">
               <div id="city-date">
-                <h3 id="current-city"></h3>
-                <h4 id="current-date"></h4>
+                <h3 id="display-city"></h3>
+                <h4 id="display-date"></h4>
               </div>
             </div>
 
             <div class="col">
               <div id="temp-wind-hum">
-                <p id="current-temp"></p>
-                <p id="current-wind"></p>
-                <p id="current-humidity"></p>
+                <p id="display-temp"></p>
+                <p id="display-wind"></p>
+                <p id="display-humidity"></p>
               </div>
             </div>
 
             <div class="col">
-              <span id="current-icon"></span>
+              <span id="display-icon"></span>
             </div>
 
           </div>
 
           <div class="row">
             <div class="col">
-              <h3 id="five-day-label"></h3></div>
+              <h3 id="Daily"></h3></div>
             </div>
 
-          <div class="row" id="five-day-forecast"></div>
+          <div class="row" id="daily-forecast"></div>
 
       </div>
 
