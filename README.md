@@ -17,6 +17,11 @@ To install the needed dependencies, run the following commands:
 N/A 
 ```
 ___
+Screenshot
+
+![Screenshot 2023-03-09 235626](https://user-images.githubusercontent.com/112591613/224235235-3420dc58-ec84-4969-bcee-93a7f416750b.png)
+
+___
 ## Usage
 To use this project there isnt much to do just follow the link and you will be taken to the app.
 ___
